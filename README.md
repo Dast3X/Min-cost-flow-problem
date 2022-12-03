@@ -41,10 +41,10 @@ edges[2].push_back(Edge(28));
 edges[2].push_back(Edge(22));
 edges[2].push_back(Edge(30));
 ```
-edges[a][b]\
-\
-a - departure node\
-\
-b - destination node\
-\
+   edges[a][b]\
+   \
+   a - departure node\
+   \
+   b - destination node\
+   \
 ![image](https://user-images.githubusercontent.com/65315002/205458064-0afa5b6b-377e-48d2-a98e-5e95d5518b76.png)
