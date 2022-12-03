@@ -137,7 +137,6 @@ int main()
 
 	add_empty_vector(edges, departure_nodes.size());
 
-
 	edges[0].push_back(Edge(10));
 	edges[0].push_back(Edge(11));
 	edges[0].push_back(Edge(18));
