@@ -3,6 +3,8 @@
 
 using namespace std;
 
+
+
 class Edge;
 class Node;
 
@@ -20,15 +22,11 @@ public:
 class Edge
 {
 public:
-	Edge(Node &from, Node &to, int cost)
+	Edge(int cost)
 	{
 		this->cost = cost;
-		this->from = &from;
-		this->to = &to;
 	}
 	int cost;
-	Node* from{ nullptr };
-	Node* to{ nullptr };
 };
 
 class MCP 
@@ -128,41 +126,33 @@ int main()
 	vector<Node> destination_nodes;
 	vector<vector<Edge>> edges;
 
-	Node a1("a1", 53);
-	Node a2("a2", 50);
-	Node a3("a3", 77);
-	departure_nodes.push_back(a1);
-	departure_nodes.push_back(a2);
-	departure_nodes.push_back(a3);
+	departure_nodes.push_back(Node("a1", 53));
+	departure_nodes.push_back(Node("a2", 50));
+	departure_nodes.push_back(Node("a3", 77));
 
 	add_empty_vector(edges, departure_nodes.size());
 
+	destination_nodes.push_back(Node("b1", 32));
+	destination_nodes.push_back(Node("b2", 33));
+	destination_nodes.push_back(Node("b3", 83));
+	destination_nodes.push_back(Node("b4", 10));
 
-	Node b1("b1", 32);
-	Node b2("b2", 33);
-	Node b3("b3", 83);
-	Node b4("b4", 10);
+	edges[0].push_back(Edge(10));
+	edges[0].push_back(Edge(11));
+	edges[0].push_back(Edge(18));
+	edges[0].push_back(Edge(32));
 
-	edges[0].push_back(Edge(a1, b1, 10));
-	edges[0].push_back(Edge(a1, b2, 11));
-	edges[0].push_back(Edge(a1, b3, 18));
-	edges[0].push_back(Edge(a1, b4, 32));
+	edges[1].push_back(Edge(16));
+	edges[1].push_back(Edge(14));
+	edges[1].push_back(Edge(20));
+	edges[1].push_back(Edge(25));
 
-	edges[1].push_back(Edge(a2, b1, 16));
-	edges[1].push_back(Edge(a2, b2, 14));
-	edges[1].push_back(Edge(a2, b3, 20));
-	edges[1].push_back(Edge(a2, b4, 25));
-
-	edges[2].push_back(Edge(a3, b1, 26));
-	edges[2].push_back(Edge(a3, b2, 28));
-	edges[2].push_back(Edge(a3, b3, 22));
-	edges[2].push_back(Edge(a3, b4, 30));
+	edges[2].push_back(Edge(26));
+	edges[2].push_back(Edge(28));
+	edges[2].push_back(Edge(22));
+	edges[2].push_back(Edge(30));
 
 
-	destination_nodes.push_back(b1);
-	destination_nodes.push_back(b2);
-	destination_nodes.push_back(b3);
-	destination_nodes.push_back(b4);
 
 	MCP a(departure_nodes, destination_nodes, edges);
 	cout << "The total cost is: " << a.getResult() << '\n';
