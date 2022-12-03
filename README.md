@@ -22,7 +22,8 @@ destination_nodes.push_back(Node("b4", 10));
 ```
 4. Add empty vector to vector, according to amount of created departure nodes
 ```cpp
-add_empty_vector(edges, departure_nodes.size());```
+add_empty_vector(edges, departure_nodes.size());
+```
 5. Add nodes 
 ```cpp
 edges[0].push_back(Edge(10));
