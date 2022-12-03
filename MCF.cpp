@@ -130,12 +130,13 @@ int main()
 	departure_nodes.push_back(Node("a2", 50));
 	departure_nodes.push_back(Node("a3", 77));
 
-	add_empty_vector(edges, departure_nodes.size());
-
 	destination_nodes.push_back(Node("b1", 32));
 	destination_nodes.push_back(Node("b2", 33));
 	destination_nodes.push_back(Node("b3", 83));
 	destination_nodes.push_back(Node("b4", 10));
+
+	add_empty_vector(edges, departure_nodes.size());
+
 
 	edges[0].push_back(Edge(10));
 	edges[0].push_back(Edge(11));
@@ -154,6 +155,6 @@ int main()
 
 
 
-	MCP a(departure_nodes, destination_nodes, edges);
-	cout << "The total cost is: " << a.getResult() << '\n';
+	MCP problem(departure_nodes, destination_nodes, edges);
+	cout << "The total cost is: " << problem.getResult() << '\n';
 }
