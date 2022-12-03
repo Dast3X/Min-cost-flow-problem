@@ -47,3 +47,11 @@ edges[2].push_back(Edge(30));
    b - destination node
 </pre>
 ![image](https://user-images.githubusercontent.com/65315002/205458064-0afa5b6b-377e-48d2-a98e-5e95d5518b76.png)
+6. Create an instance of MCP class and pass all vectors
+```cpp
+MCP problem(departure_nodes, destination_nodes, edges);
+```
+7. To output result write
+```cpp
+cout << "The total cost is: " << problem.getResult() << '\n';
+```
